@@ -1,4 +1,5 @@
-﻿Lenguajes y Paradigmas de Programación
+﻿Daniel Luis Martín
+Lenguajes y Paradigmas de Programación
 
 Respuestas practica 3
 
@@ -22,10 +23,283 @@ El primer número indica desde que posición de la cadena se va a msotrar y el s
 
 27. Quedaría “hello world”, se asignaría el nuevo string al final del ya existente en la variable.
 
-28. En “e” queda el resultado de concatenar consigo mismo la cadena “.” 2 veces, es decir, “...”.
+28. En “e” queda el resultado de concatenar consigo mismo la cadena “.” 2 veces, es decir, => “...”.
 
-29. “a” será el resultado de concatenar 2 veces consigo mismo el resultado de la operación a+1, en este caso 2 2 2 puesto que después de la llave hay un espacio, si éste no existiese sería 222.
+29. “a” será el resultado de concatenar 2 veces consigo mismo el resultado de la operación a+1, en este caso => 2 2 2 puesto que después de la llave hay un espacio, si éste no existiese sería 222.
 
-30. Un array con cada palabra de la cadena “this is a test” separada por comillas dobles individualmente: ["this", "is", "a", "test"] 
+30. Un array con cada palabra de la cadena “this is a test” separada por comillas dobles individualmente: => ["this", "is", "a", "test"] 
+
+31. %w[\t \n] crea un array con cada elemento entre comillas simples separado individualmente: => ["\\t", "\\n"] 
+
+32. %W[\t \n] crea un array con cada elemento entre comillas dobles separado individualmente: => ["\t", "\n"] 
+
+33. nils = Array.new(3) crea un array de 3 elementos nulos, puesto que no se le ha asignado ningún valor, y lo asigna a nils: => [nil, nil, nil]
+
+34. zeros = Array.new(3, 0) crea un array de 3 elementos donde el valor de cada uno de esos elementos será 0. => [0, 0, 0]
+
+35. “b” será un array con los valores de la variable “x”, que es otro array.
+
+36. “c” es un array de 3 elementos que va incrementando en 2 unidades cada casilla adicional del array => [0, 2, 4] 
+
+37. El resultado de cada una de las operaciones es:  
+>> a[1,1]
+=> [“b”]
+
+>> a[-2,2]
+=> ["d", "e"]
+
+>> a[0..2]
+=> ["a", "b", "c"]
+
+>> a[0...1]
+=> [“a”]
+
+>> a[-2..-1]
+=> ["d", "e"]
+
+38. 
+>> a[0,2] = %w{A B}
+=> ["A", "B"]
+>> a
+=> ["A", "B", "c", "d", "e"]
+
+>> a[2..5] = %w{C D E}
+=> ["C", "D", "E"]
+>> a
+=> ["A", "B", "C", "D", "E"]
+
+>> a[0,0] = [1,2,3]
+=> [1, 2, 3]
+>> a
+=> [1, 2, 3, "A", "B", "C", "D", "E"]
+
+>> a[0,2] = []
+=> []
+>> a
+=> [3, "A", "B", "C", "D", "E"]
+
+>> a[-1,1] = [ ’Z’ ]
+=> ["Z"]
+>> a
+=> [3, "A", "B", "C", "D", "Z"]
+
+>> a[-2,2] = nil
+=> nil
+>> a
+=> [3, "A", "B", "C", nil]
+
+39. 
+>> a = (1...4).to_a
+=> [1, 2, 3]
+
+>> a = a + [4, 5]
+=> [1, 2, 3, 4, 5]
+
+>> a += [[6, 7, 8]]
+=> [1, 2, 3, 4, 5, [6, 7, 8]]
+
+40. 
+>> x = %w{a b c b a}
+=> ["a", "b", "c", "b", "a"]
+
+>> x = x - %w{b c d}
+=> ["a", "a"]
+
+41. 
+>> z = [0]*8
+=> [0, 0, 0, 0, 0, 0, 0, 0]
+
+42. 
+>> a = []
+=> []
+
+>> a << 1
+=> [1] 
+
+>> a << 2 << 3
+=> [1, 2, 3]
+
+>> a << [4, 5, 6]
+=> [1, 2, 3, [4, 5, 6]]
+
+>> a.concat [7, 8]
+=> [1, 2, 3, [4, 5, 6], 7, 8]
+
+43. 
+>> a = [1, 1, 2, 2, 3, 3, 4]
+=> [1, 1, 2, 2, 3, 3, 4]
+
+>> b = [5, 5, 4, 4, 3, 3, 2]
+=> [5, 5, 4, 4, 3, 3, 2]
+
+>> c = a | b
+=> [1, 2, 3, 4, 5]
+
+>> d = b | a
+=> [5, 4, 3, 2, 1]
+
+>> e = a & b
+=> [2, 3, 4]
+
+>> f = b & a
+=> [4, 3, 2]
+
+44. 
+>> a = 1..10
+=> 1..10
+>> a.class
+=> Range
+>> a.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>> b = 1...10
+=> 1....10
+>> b.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>> b.include? 10
+=> false
+
+>> b.include? 8
+=> true
+
+>> b.step(2) {|x| print "#{x} " }
+=> “1 3 5 7 9 "
+
+45. 
+>> r = 0...100
+=> 0....100
+>> r.member? 50
+=> true
+>> r.include? 99.9
+=> true
+>> r.member? 99.9
+=> true
+
+46. 
+>> true.class
+=> TrueClass
+
+>> false.class
+=> FalseClass
+
+>> puts "hello" if 0
+=> “hello”
+
+>> puts "hello" if nil
+=> nil
+
+>> puts "hello" if ""
+=> “hello”
+
+47. 
+>> x = :sym
+=> :sym
+>> x.class
+=>Symbol
+
+>> x == ’sym’
+=> false
+
+>> x == :sym
+=> false 
+
+>> z = :’a long symbol’
+=> :"a long symbol"
+
+>> z.class
+=>Symbol
+
+>> x == ’sym’.to_sym
+=> true
+
+>> x.to_s == ’sym’
+=> true 
+
+48.
+>> s = "Ruby"
+=> "Ruby"
+
+>> t = s
+=> "Ruby"
+
+>> t[-1] = ""
+=> ""
+
+>> print s
+=> Rub
+
+>> t = "Java"
+=> "Java"
+
+>> print s, t
+=> “RubJava”
+
+49.
+>> "%d %s" % [3, "rubies"]
+=> 3 rubies
+
+50.
+>> x, y = 4, 5
+=> [4, 5]
+
+>> z = x > y ? x : y
+=> 5
+
+>> x,y,z = [1,2,3]
+=>[1, 2, 3]
+
+51.
+>> x = { :a => 1, :b => 2 }
+=> {:b=>2, :a=>1}
+
+>> x.keys
+=> [:a, :b]
+
+>> x.values
+=> [1, 2]
+
+>> x[:c] = 3
+=> 3
+
+>> x
+=> {:a=>1, :b=>2, :c=>3}
+
+>> x.delete(’a’)
+=> nil
+
+>> x
+=>
+
+>> x.delete(:a)
+=> 1
+
+>> x
+=> {:a=>1, :b=>2, :c=>3}
+
+>> x = { :a => 1, :b => 2, :c => 4 }
+=> {:b=>2, :c=>4, :a=>1}
+
+>> x.delete_if { |k,v| v % 2 == 0 }
+=> {:a=>1}
+
+>> x
+=> {:a=>1}
+
+52. “yield” transfiere el control al bloque. 
+
+53. La sentencia crea un Hash de nombre “counts” usando el constructor y sin ningún parámetro. La asignación “counts = {}” hace lo mismo que la anterior.
+El constructor admite parámetros pero parece que no los interpreta, o no los tiene en cuenta.
+
+54. La expresión retorna: ["hello", "world", "hello", "LPP"]
+
+55. La sentencia ordena las claves y luego muestra el nombre de las mismas.
+c.keys.sort.each { |k| puts c[k] }
+3
+2
+1
+ => [:a, :b, :c] 
+
+
 
 
