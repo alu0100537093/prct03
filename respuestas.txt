@@ -1,0 +1,31 @@
+﻿Lenguajes y Paradigmas de Programación
+
+Respuestas practica 3
+
+
+18. Muestra el mensaje 'Hola Mundo' y un => nil, puesto que el comando puts siempre retorna nil o nulo.
+
+21. Las comillas simples(') hacen que si por ejemplo hacemos un puts 'hola\t\n' se nos muestre el mensaje literal, es decir, hola\t\n. Sin embargo, las comillas dobles(“) hacen que se traduzca \t\n en tabulador y retorno de carro de manera que, si introdujésemos el comando puts “hola\t\n”, se nos muestre por pantalla el mensaje hola.
+
+22. %q actúa como comillas simples. Si hiciésemos un puts %q{hello world\n} se nos mostraría la cadena hello world\n, puesto que %q actúa como comillas simples, se mostraría literalmente la cadena entre llaves.
+
+23. %Q actúa como comillas dobles. Interpola cadenas. Traduce los saltos de línea y tabuladores de las cadenas.
+
+24. En “c” quedaría la cadena "--4--\n--2--\n" en la cual se han sustituido los valores de las variables “a” y “b” por los que le hemos asignados, y donde c= <<HERE indica la línea o líneas que se le asignan a dicha variable hasta que se vuelva introducir la instrucción HERE, que indicaría el final de la asignación.
+
+25. Realiza la asignación al igual que en la pregunta anterior. Sin embargo, no se sustituyen los valores de las variables “a” y “b”, ya que la cadena asignada a la variable “c” se encuentra entre comillas simples.
+
+26. 	·s[0,2]: “he”
+	·s[-1,1]: “o”
+	·s[0,10]: “hello”
+El primer número indica desde que posición de la cadena se va a msotrar y el segundo nos indica cuantos caracteres se mostrarán.
+
+27. Quedaría “hello world”, se asignaría el nuevo string al final del ya existente en la variable.
+
+28. En “e” queda el resultado de concatenar consigo mismo la cadena “.” 2 veces, es decir, “...”.
+
+29. “a” será el resultado de concatenar 2 veces consigo mismo el resultado de la operación a+1, en este caso 2 2 2 puesto que después de la llave hay un espacio, si éste no existiese sería 222.
+
+30. Un array con cada palabra de la cadena “this is a test” separada por comillas dobles individualmente: ["this", "is", "a", "test"] 
+
+
